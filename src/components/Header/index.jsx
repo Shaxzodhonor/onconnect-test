@@ -5,14 +5,17 @@ import Logo from "../../assets/images/Logo-main.svg";
 import TextFieldIcon from "../../assets/images/text_field.svg"
 import FullscreenIcon from "../../assets/images/fullscreen.svg"
 import Search from "../../assets/images/search.svg"
-// import  from "../../assets/images/"
-// import  from "../../assets/images/"
-// import  from "../../assets/images/"
+import { useEffect, useState } from "react";
 
 
 
 function Header() {
-
+  const [adminData, setAdmin] = useState([])
+  useEffect(()=>{
+    fetch("https://reqres.in/api/users/2")
+    .then(res => res.json())
+    .then(data => setAdmin(data))
+  },[])
   return(
     <header className="header">
       <img src={Logo} alt="logo" />
@@ -33,11 +36,11 @@ function Header() {
         </span>
         <div className="account-wrap">
           <div className="text-wrap">
-            <div className="name">Mardon Shonazarov</div>
+            <div className="name">{adminData.data?.first_name} {adminData.data?.last_name}</div>
             <span className="role">Админ</span>
           </div>
           <div className="img-wrap">
-            <img src="" alt="" />
+            <img src={adminData.data?.avatar} alt="" />
           </div>
         </div>
       </div>

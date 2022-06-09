@@ -6,7 +6,7 @@ const Context = createContext();
 function Provider({children}) {
 
   const history = useHistory()
-  const [login, setLogin] = useState(JSON.stringify(sessionStorage.getItem("__login")))
+  const [login, setLogin] = useState(JSON.parse(sessionStorage.getItem("__login")))
   if(login){
     sessionStorage.setItem('_login', JSON.stringify(login));
   } else {

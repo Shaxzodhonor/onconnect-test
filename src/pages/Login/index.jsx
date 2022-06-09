@@ -1,12 +1,13 @@
 import "./style.scss";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
-
+import { Context as LoginContext } from "../../LoginContext";
 // images
 import Girl from "../../assets/images/login-girl.png"
 import Logo from "../../assets/images/Logo.svg"
 
 function Login() {
+  const [login, setLogin] = useContext(LoginContext)
   const history = useHistory()
   const [indicator,setIndicator] = useState({open: false,})
   
@@ -36,6 +37,7 @@ function Login() {
     .then(res => res.json())
     .then(data => {
       if(data.token){
+        setLogin(data)
         setIndicator({open:false})
         history.push("/admin")
       } else {
@@ -54,8 +56,8 @@ function Login() {
           <img className="logo" src={Logo} alt="logo" />
           {indicator?.info ? (<p style={{marginTop: "-34px", color: "red"}}>{indicator?.info}</p>) : null}
           <form onSubmit={loginFunction}>
-            <Input name={"login"} type={"text"} label={"Логин"} inputValue={"eve.holt@reqres.in"} />
-            <Input name={"password"} type={"password"} label={"Пароль"} inputValue={"cityslicka"} />
+            <Input name={"login"} type={"text"} label={"Логин"}  />
+            <Input name={"password"} type={"password"} label={"Пароль"}  />
             <div className="security">
               <a href="#">Забыли пароль?</a>
               <button type="submit">Кириш</button>
@@ -85,7 +87,9 @@ function Input({name, type,label, inputValue}){
   const [value, setValue] = useState(inputValue && true)
 
   useEffect(()=>{
-    labelRef.current?.classList.add("label--valid")
+    if(inputValue){
+      labelRef.current?.classList.add("label--valid")
+    }
   },[])
   
   function Change(evt) {

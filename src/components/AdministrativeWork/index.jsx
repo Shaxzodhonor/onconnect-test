@@ -218,7 +218,7 @@ function AdministrativeWork(){
                   <div className="right_top--main-title">
                     Маъмурий низо - Биринчи инстанция
                   </div>
-                  <div style={{display: "flex",alignItems: "center", flexWrap: "wrap", justifyContent: "space-between" }}>
+                  <div style={{marginBottom: "16px", display: "flex",alignItems: "center", justifyContent: "space-between" }}>
                     <ul className="right_top--items">
                       <li className="right_top--item">
                         <div className="right_top--title">

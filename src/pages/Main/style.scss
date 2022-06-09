@@ -1,0 +1,12 @@
+.Main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+  .content-wrap {
+    display: flex;
+    overflow: auto;
+    height: 100%;
+
+  }
+}

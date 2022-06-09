@@ -1,0 +1,42 @@
+header.header {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 3px 6px rgba(79, 125, 150, 0.16);
+  .right {
+    display: flex;
+    align-items: center;
+    .me {
+      margin-right: 16px;
+    }
+  }
+  .language {
+    border: none;
+    margin-right: 24px;
+  }
+  .account-wrap {
+    display: flex;
+    margin-left: 47px;
+    .name {
+      font-size: 16px;
+      font-weight: 600;
+      text-align: right;
+      margin-bottom: 7px;
+    }
+    .role {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      text-align: right;
+      color: rgba(122, 134, 143, 1);
+    }
+    .img-wrap{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: red;
+      margin-left: 7px;
+    }
+  }
+}

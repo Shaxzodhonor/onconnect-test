@@ -1,0 +1,16 @@
+@mixin list-unstyled {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin link-unstyled {
+  text-decoration: none;
+}
+
+// responsive //
+@mixin breakpoint-down ($screen-media) {
+  @media only screen and (max-width: $screen-media) {
+      @content
+  }
+}

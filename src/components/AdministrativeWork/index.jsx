@@ -15,6 +15,7 @@ import { Pagination } from "swiper";
 // components
 import Badge from "../Badge";
 import Wrapper from "../Wrapper"
+import Registration from "../Registration";
 import { Switch, Route } from "react-router-dom";
 
 // images
@@ -53,31 +54,31 @@ function AdministrativeWork(){
           </Link>
         </SwiperSlide>
         <SwiperSlide>
-          <Link to={"/admin/main"}>
+          <Link to={"/admin/main/registration"}>
             Руйхатга олиш
             <span><Badge>13</Badge></span>
           </Link>
         </SwiperSlide>
         <SwiperSlide>
-          <Link to={"/admin/main/electronic-reception"}>
+          <Link to={"/admin/main/distribution"}>
             Таксимаш
             <span><Badge>13</Badge></span>
           </Link>
         </SwiperSlide>
         <SwiperSlide>
-          <Link to={"/"}>Иш юритишни тиклаш</Link>
+          <Link to={"/admin/main/restoration-work"}>Иш юритишни тиклаш</Link>
         </SwiperSlide>
         <SwiperSlide>
-          <Link to={"/"}>Натижани кабул килиш</Link>
+          <Link to={"/admin/main/accept-result"}>Натижани кабул килиш</Link>
         </SwiperSlide>
         <SwiperSlide>
-          <Link to={"/"}>Кайта таксимлаш</Link>
+          <Link to={"/admin/main/redistribution"}>Кайта таксимлаш</Link>
         </SwiperSlide>
         <SwiperSlide>
-          <Link to={"/"}>Учирилган</Link>
+          <Link to={"/admin/main/deleted"}>Учирилган</Link>
         </SwiperSlide>
         <SwiperSlide>
-          <Link to={"/"}>Рад этилган</Link>
+          <Link to={"/admin/main/rejected"}>Рад этилган</Link>
         </SwiperSlide>
       </Swiper>
       </header>
@@ -291,7 +292,13 @@ function AdministrativeWork(){
             </div>
           </div>
         </Route>
-        <Route path={"/admin/main/electronic-reception"}>Not found</Route>
+        <Route path={"/admin/main/registration"}><h1 style={{textAlign: "center"}}>Registration</h1></Route>
+        <Route path={"/admin/main/distribution"}><h1 style={{textAlign: "center"}}>Distribution</h1></Route>
+        <Route path={"/admin/main/restoration-work"}><h1 style={{textAlign: "center"}}>Restoration of office work</h1></Route>
+        <Route path={"/admin/main/accept-result"}><h1 style={{textAlign: "center"}}>Accept the result</h1></Route>
+        <Route path={"/admin/main/redistribution"}><h1 style={{textAlign: "center"}}>Redistribution</h1></Route>
+        <Route path={"/admin/main/deleted"}><h1 style={{textAlign: "center"}}>Deleted</h1></Route>
+        <Route path={"/admin/main/rejected"}><h1 style={{textAlign: "center"}}>Rejected</h1></Route>
       </Switch>
     </div>
   )

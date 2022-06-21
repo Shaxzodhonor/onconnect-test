@@ -56,8 +56,8 @@ function Login() {
           <img className="logo" src={Logo} alt="logo" />
           {indicator?.info ? (<p style={{marginTop: "-34px", color: "red"}}>{indicator?.info}</p>) : null}
           <form onSubmit={loginFunction}>
-            <Input name={"login"} type={"text"} label={"Логин"}  />
-            <Input name={"password"} type={"password"} label={"Пароль"}  />
+            <Input name={"login"} type={"text"} label={"Логин"}  inputValue={"eve.holt@reqres.in"}/>
+            <Input name={"password"} type={"password"} label={"Пароль"}  inputValue={"cityslicka"}/>
             <div className="security">
               <a href="#">Забыли пароль?</a>
               <button type="submit">Кириш</button>
